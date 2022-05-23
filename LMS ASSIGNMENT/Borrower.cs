@@ -13,7 +13,7 @@ namespace LMS_ASSIGNMENT
         {
             if (File.Exists(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt") == true)
             {
-                int totalPriceDue = 0;
+                int totalPriceDue = 0,totalDays = 0;
                 string read;
                 string[] splitread;
                 FileStream fileStreamobj = new FileStream(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt", FileMode.Open, FileAccess.Read);
@@ -24,8 +24,9 @@ namespace LMS_ASSIGNMENT
                     splitread = read.Split(' ');
                     if (splitread[0] == bId.ToString())
                     {
-                        var daysCalculate = Convert.ToDateTime(splitread[4]) - Convert.ToDateTime(splitread[3]);
-                        totalPriceDue = totalPriceDue + daysCalculate.Days*30;
+                        int daysCalculate = (Convert.ToDateTime(splitread[4]) - Convert.ToDateTime(splitread[3])).Days;
+                        totalDays = totalDays + daysCalculate;
+                        totalPriceDue = totalPriceDue + daysCalculate*30;
                     }
                 }
                 streamReaderobj.Close();
@@ -41,16 +42,18 @@ namespace LMS_ASSIGNMENT
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine("BookName Author DateIssued DateofReturn");
+                    Console.WriteLine("BookName Author DateIssued DateofReturn Period");
                     while (streamReaderobjtemp.Peek() > 0)
                     {
                         read = streamReaderobjtemp.ReadLine();
                         splitread = read.Split(' ');
                         if (splitread[0] == bId.ToString())
                         {
-                            Console.WriteLine(splitread[1] + " " + splitread[2] + " " + splitread[3]+" " + splitread[4]);
+                            Console.WriteLine(splitread[1] + " " + splitread[2] + " " + splitread[3] + " " + splitread[4] + " " + (Convert.ToDateTime(splitread[4]) - Convert.ToDateTime(splitread[3])).Days);
                         }
                     }
+                    Console.WriteLine();
+                    Console.WriteLine("Total Days - "+totalDays);
                     Console.WriteLine();
                     Console.Write("Charge of 1book/day is 30,So ");
                     Console.Write("Total Price Due - " + totalPriceDue);
