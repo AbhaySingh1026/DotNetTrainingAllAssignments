@@ -1,0 +1,8 @@
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\bin\Debug\LMS ASSIGNMENT.exe.config
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\bin\Debug\LMS ASSIGNMENT.exe
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\bin\Debug\LMS ASSIGNMENT.pdb
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\obj\Debug\LMS ASSIGNMENT.csproj.AssemblyReference.cache
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\obj\Debug\LMS ASSIGNMENT.csproj.SuggestedBindingRedirects.cache
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\obj\Debug\LMS ASSIGNMENT.csproj.CoreCompileInputs.cache
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\obj\Debug\LMS ASSIGNMENT.exe
+E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\obj\Debug\LMS ASSIGNMENT.pdb
