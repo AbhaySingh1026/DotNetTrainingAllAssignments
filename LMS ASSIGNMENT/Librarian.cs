@@ -105,6 +105,8 @@ namespace LMS_ASSIGNMENT
                         string bookName = Console.ReadLine();
                         Console.Write("Enter author name - ");
                         string authorName = Console.ReadLine();
+                        FileStream newobj = new FileStream(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail1.txt", FileMode.Create, FileAccess.Write);
+                        StreamWriter newobj2 = new StreamWriter(newobj);
                         while (streamReaderobj2.Peek() > 0)
                         {
                             temp2 = streamReaderobj2.ReadLine();
@@ -115,15 +117,16 @@ namespace LMS_ASSIGNMENT
                             }
                             else
                             {
-                                FileStream newobj = new FileStream(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail1.txt", FileMode.Append, FileAccess.Write);
-                                StreamWriter newobj2 = new StreamWriter(newobj);
+                                
                                 newobj2.WriteLine(temp2);
-                                newobj2.Close();
-                                newobj.Close();
+                                
                             }
-                        }
+                        }streamReaderobj2.Dispose();
                         streamReaderobj2.Close();
                         fileStreamobj2.Close();
+                        newobj2.Dispose();
+                        newobj2.Close();
+                        newobj.Close();
                         File.Delete(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt");
                         File.Move(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail1.txt", @"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt");
                     }
