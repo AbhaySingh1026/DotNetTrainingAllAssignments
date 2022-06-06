@@ -1,0 +1,3 @@
+Beverages 100000
+Sweets 150000
+Starter 300000
