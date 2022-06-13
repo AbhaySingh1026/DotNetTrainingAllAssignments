@@ -23,6 +23,7 @@ namespace LMS_ASSIGNMENT
                 case 1:
                     if (File.Exists(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt") == true)
                     {
+                        Console.WriteLine("BID BookName Author IssueDate ReturnDate");
                         FileStream fileStreamobj = new FileStream(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\IssuedBooksDetail.txt", FileMode.Open, FileAccess.Read);
                         StreamReader streamReaderobj = new StreamReader(fileStreamobj);
                         while (streamReaderobj.Peek() > 0)
@@ -149,6 +150,7 @@ namespace LMS_ASSIGNMENT
                             }
                             else
                             {
+                                Console.WriteLine("BookName Author Price");
                                 FileStream objForBookDetail = new FileStream(@"E:\KelltonTech\.NET training kellton\Real Training Started\LMS ASSIGNMENT\Booksinlibrary.txt",FileMode.Open,FileAccess.Read);
                                 StreamReader objforcalling = new StreamReader(objForBookDetail);
                                 while (objforcalling.Peek() > 0)
