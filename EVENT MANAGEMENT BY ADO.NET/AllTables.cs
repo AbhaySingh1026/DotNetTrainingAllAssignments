@@ -52,7 +52,7 @@ namespace EVENT_MANAGEMENT_BY_ADO.NET
             {
                 case 1:
                     Console.Write("Enter you new password - ");
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("update table ADMINDETAILS set LPASSWORD = '"+Console.ReadLine()+"' where USERNAME = '"+username+"'", sqlConnectionObj);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("update ADMINDETAILS set LPASSWORD = '"+Console.ReadLine()+"' where USERNAME = '"+username+"'", sqlConnectionObj);
                     sqlDataAdapter.Fill(dataTableObj);
                     break;
                 case 2: ApproveOrReject(sqlConnectionObj, dataTableObj);
@@ -287,8 +287,8 @@ namespace EVENT_MANAGEMENT_BY_ADO.NET
         }
         void ApproveOrReject(SqlConnection sqlConnectionObj, DataTable dataTableObj)
         {
-            
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from booking where status = NEUTRAL", sqlConnectionObj);
+            string temp = "NEUTRAL";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"select * from booking where status = '"+temp+"'", sqlConnectionObj);
             sqlDataAdapter.Fill(dataTableObj);
             for(int i = 0; i < dataTableObj.Rows.Count; i++)
             {
@@ -303,12 +303,14 @@ namespace EVENT_MANAGEMENT_BY_ADO.NET
             Console.WriteLine("1. Approve\n2. Disapprove");
             if(Console.ReadLine() == "1")
             {
-                SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("update booking set status = Approve where username = '"+username+"'", sqlConnectionObj);
+                temp = "Approve";
+                SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("update booking set status = '"+temp+"' where username = '"+username+"'", sqlConnectionObj);
                 sqlDataAdapter1.Fill(dataTableObj);
             }
             else if(Console.ReadLine() == "2")
             {
-                SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("update booking set status = Disapprove where username = '" + username + "'", sqlConnectionObj);
+                temp = "Disapprove";
+                SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("update booking set status = '"+temp+"' where username = '" + username + "'", sqlConnectionObj);
                 sqlDataAdapter1.Fill(dataTableObj);
             }
             else goto TOP;
