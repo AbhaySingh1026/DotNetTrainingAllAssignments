@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEND EMAIL ASS. THROUGH ENTITYFRAMEWORK", "SEND EMAIL ASS. THROUGH ENTITYFRAMEWORK.csproj", "{A752D6AC-D875-4BDD-BAB9-6417E7A94CF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RUN DLL", "RUN DLL\RUN DLL.csproj", "{567A58D2-6469-4704-ADDF-C9A13AD16E53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A752D6AC-D875-4BDD-BAB9-6417E7A94CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A752D6AC-D875-4BDD-BAB9-6417E7A94CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A752D6AC-D875-4BDD-BAB9-6417E7A94CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A752D6AC-D875-4BDD-BAB9-6417E7A94CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567A58D2-6469-4704-ADDF-C9A13AD16E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567A58D2-6469-4704-ADDF-C9A13AD16E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567A58D2-6469-4704-ADDF-C9A13AD16E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567A58D2-6469-4704-ADDF-C9A13AD16E53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8CB9182-1E3C-4125-A621-65C6D9122C36}
+	EndGlobalSection
+EndGlobal

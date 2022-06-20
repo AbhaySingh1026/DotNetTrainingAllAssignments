@@ -425,7 +425,7 @@ namespace SEND__EMAIL_ON_BOOKING_ORDER
                             if(dt.Rows[i][0].ToString() == itemName)
                             {
                                 check++;
-                                SendEmail(itemName,email,fName);
+                                SendEmail(email,fName);
                                 break;
                             }
                         }
@@ -445,7 +445,7 @@ namespace SEND__EMAIL_ON_BOOKING_ORDER
                 return;
             }
         }
-        static void SendEmail(string itemName,string email,string fName)
+        static void SendEmail(string email,string fName)
         {
             MailMessage mailMessageObj = new MailMessage("gourav7398@gmail.com",email);
             mailMessageObj.Subject = "Welcome";
