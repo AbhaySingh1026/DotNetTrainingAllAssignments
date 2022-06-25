@@ -11,7 +11,7 @@ using SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK;
 namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
 {
     [DbContext(typeof(MakingConnection))]
-    [Migration("20220620130440_initial")]
+    [Migration("20220625055123_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
