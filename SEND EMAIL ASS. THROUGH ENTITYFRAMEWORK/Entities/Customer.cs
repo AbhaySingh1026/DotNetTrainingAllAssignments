@@ -2,7 +2,7 @@
 
 namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Entities
 {
-    public class Customers
+    public class Customer
     {
         [Key]
         public int CustomerId { get; set; }

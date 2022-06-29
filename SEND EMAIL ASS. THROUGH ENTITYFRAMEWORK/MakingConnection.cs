@@ -5,8 +5,8 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
 {
     public class MakingConnection : DbContext
     {
-        public DbSet<Items> Item { get; set; }
-        public DbSet<Customers> Customer { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public MakingConnection()
         {
 

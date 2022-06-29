@@ -12,14 +12,14 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
         }
         public void InsertItem()
         {
-            Items itemsObj = new Items();
+            Item itemsObj = new Item();
             Console.Write("Enter Item Name - ");
             itemsObj.ItemName = Console.ReadLine();
             Console.Write("Enter Item Quantity - ");
             itemsObj.ItemQuantity = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter Item Price - ");
             itemsObj.ItemPrice = Convert.ToInt32(Console.ReadLine());
-            makingConnectionObj.Item.Add(itemsObj);
+            makingConnectionObj.Items.Add(itemsObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Inserted");
         }
@@ -28,7 +28,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             ShowAllItems();
             Console.Write("Enter Item Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var itemObj = makingConnectionObj.Item.Where(x => x.ItemId == id).FirstOrDefault();
+            var itemObj = makingConnectionObj.Items.Where(x => x.ItemId == id).FirstOrDefault();
             if(itemObj == null)
             {
                 Console.WriteLine("Enter Item Id Doesn't Exists,Please Try Again - ");
@@ -40,7 +40,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             itemObj.ItemQuantity = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter New Item Price - ");
             itemObj.ItemPrice = Convert.ToInt32(Console.ReadLine());
-            makingConnectionObj.Item.Update(itemObj);
+            makingConnectionObj.Items.Update(itemObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Updated");
         }
@@ -49,19 +49,19 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             ShowAllItems();
             Console.Write("Enter Item Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var itemObj = makingConnectionObj.Item.Where(x => x.ItemId == id).FirstOrDefault();
+            var itemObj = makingConnectionObj.Items.Where(x => x.ItemId == id).FirstOrDefault();
             if (itemObj == null)
             {
                 Console.WriteLine("Enter Item Id Doesn't Exists,Please Try Again - ");
                 return;
             }
-            makingConnectionObj.Item.Remove(itemObj);
+            makingConnectionObj.Items.Remove(itemObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Deleted");
         }
         public void ShowAllItems()
         {
-            var listObj = makingConnectionObj.Item.ToList();
+            var listObj = makingConnectionObj.Items.ToList();
             foreach (var item in listObj)
             {
                 Console.WriteLine($"Item Id - {item.ItemId},Item Name - {item.ItemName},Item Quantity - {item.ItemQuantity},Item Price - {item.ItemPrice}");
@@ -70,7 +70,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
         public void ShowOneItem()
         {
             Console.WriteLine("All Item Id's Present Are :");
-            var listObj = makingConnectionObj.Item.ToList();
+            var listObj = makingConnectionObj.Items.ToList();
             foreach(var item in listObj)
             {
                 Console.Write($"{item.ItemId}, ");
@@ -78,7 +78,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             Console.WriteLine("Please Choose 1 From This Of Which U Want To See Details - ");
             Console.Write("Enter Item Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var itemObj = makingConnectionObj.Item.Where(x => x.ItemId == id).FirstOrDefault();
+            var itemObj = makingConnectionObj.Items.Where(x => x.ItemId == id).FirstOrDefault();
             if(itemObj == null)
             {
                 Console.WriteLine("Enter Item Id Doesn't Exists,Please Try Again - ");
@@ -87,7 +87,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
         }
         public void InsertCustomer()
         {
-            Customers customersObj = new Customers();
+            Customer customersObj = new Customer();
             Console.Write("Enter Customer First Name - ");
             customersObj.FirstName = Console.ReadLine();
             Console.Write("Enter Customer Last Name - ");
@@ -96,7 +96,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             customersObj.Phone = Convert.ToInt64(Console.ReadLine());
             Console.Write("Enter Customer Email - ");
             customersObj.Email = Console.ReadLine();
-            makingConnectionObj.Customer.Add(customersObj);
+            makingConnectionObj.Customers.Add(customersObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Inserted");
 
@@ -106,7 +106,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             ShowAllCustomers();
             Console.Write("Enter Customer Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var customersObj = makingConnectionObj.Customer.Where(x => x.CustomerId == id).FirstOrDefault();
+            var customersObj = makingConnectionObj.Customers.Where(x => x.CustomerId == id).FirstOrDefault();
             if (customersObj == null)
             {
                 Console.WriteLine("Enter Customer Id Doesn't Exists,Please Try Again - ");
@@ -120,7 +120,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             customersObj.Phone = Convert.ToInt64(Console.ReadLine());
             Console.Write("Enter Customer Email - ");
             customersObj.Email = Console.ReadLine();
-            makingConnectionObj.Customer.Update(customersObj);
+            makingConnectionObj.Customers.Update(customersObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Updated");
         }
@@ -129,19 +129,19 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             ShowAllCustomers();
             Console.Write("Enter Customer Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var customersObj = makingConnectionObj.Customer.Where(x => x.CustomerId == id).FirstOrDefault();
+            var customersObj = makingConnectionObj.Customers.Where(x => x.CustomerId == id).FirstOrDefault();
             if (customersObj == null)
             {
                 Console.WriteLine("Enter Item Id Doesn't Exists,Please Try Again - ");
                 return;
             }
-            makingConnectionObj.Customer.Remove(customersObj);
+            makingConnectionObj.Customers.Remove(customersObj);
             makingConnectionObj.SaveChanges();
             Console.WriteLine("Record Deleted");
         }
         public void ShowAllCustomers()
         {
-            var listObj = makingConnectionObj.Customer.ToList();
+            var listObj = makingConnectionObj.Customers.ToList();
             foreach (var item in listObj)
             {
                 Console.WriteLine($"Customer FName - {item.FirstName},Customer LName - {item.LastName},Customer Phone - {item.Phone},Customer Email - {item.Email}");
@@ -150,7 +150,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
         public void ShowOneCustomer()
         {
             Console.WriteLine("All Customer Id's Present Are :");
-            var listObj = makingConnectionObj.Customer.ToList();
+            var listObj = makingConnectionObj.Customers.ToList();
             foreach (var item in listObj)
             {
                 Console.Write($"{item.CustomerId}, ");
@@ -158,7 +158,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             Console.WriteLine("Please Choose 1 From These Of Which U Want To See Details - ");
             Console.Write("Enter Customer Id - ");
             int id = Convert.ToInt32(Console.ReadLine());
-            var customersObj = makingConnectionObj.Customer.Where(x => x.CustomerId == id).FirstOrDefault();
+            var customersObj = makingConnectionObj.Customers.Where(x => x.CustomerId == id).FirstOrDefault();
             if (customersObj == null)
             {
                 Console.WriteLine("Enter Item Id Doesn't Exists,Please Try Again - ");
@@ -170,7 +170,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
         {
             Console.Write("Enter Your Email Id - ");
             string email = Console.ReadLine();
-            var customersObj = makingConnectionObj.Customer.Where(x => x.Email == email).FirstOrDefault();
+            var customersObj = makingConnectionObj.Customers.Where(x => x.Email == email).FirstOrDefault();
             if(customersObj == null)
             {
                 Console.WriteLine("You Are Not A Valid Customer, 1st Register Yourself In Our Shop Then Only U Can Book Items From Us - ");
@@ -179,7 +179,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK
             ShowAllItems();
             Console.WriteLine("Which Item Do U Want To Book, Enter It's Id - ");
             int checkId = Convert.ToInt32(Console.ReadLine());
-            var checkItem = makingConnectionObj.Item.Where(x => x.ItemId == checkId).FirstOrDefault();
+            var checkItem = makingConnectionObj.Items.Where(x => x.ItemId == checkId).FirstOrDefault();
             if(checkItem == null)
             {
                 Console.WriteLine("Item With Entered Id Doesn't Exists,Please Try Again - ");

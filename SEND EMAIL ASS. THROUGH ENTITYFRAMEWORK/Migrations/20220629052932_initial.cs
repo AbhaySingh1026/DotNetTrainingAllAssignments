@@ -9,7 +9,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customer",
+                name: "Customers",
                 columns: table => new
                 {
                     CustomerId = table.Column<int>(type: "int", nullable: false)
@@ -21,11 +21,11 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customer", x => x.CustomerId);
+                    table.PrimaryKey("PK_Customers", x => x.CustomerId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "Items",
                 columns: table => new
                 {
                     ItemId = table.Column<int>(type: "int", nullable: false)
@@ -36,17 +36,17 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Item", x => x.ItemId);
+                    table.PrimaryKey("PK_Items", x => x.ItemId);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Item");
+                name: "Items");
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Entities.Customers", b =>
+            modelBuilder.Entity("SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Entities.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -43,10 +43,10 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Entities.Items", b =>
+            modelBuilder.Entity("SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Entities.Item", b =>
                 {
                     b.Property<int>("ItemId")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace SEND_EMAIL_ASS._THROUGH_ENTITYFRAMEWORK.Migrations
 
                     b.HasKey("ItemId");
 
-                    b.ToTable("Item");
+                    b.ToTable("Items");
                 });
 #pragma warning restore 612, 618
         }
